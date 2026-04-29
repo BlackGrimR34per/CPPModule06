@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/04 13:43:21 by yosherau          #+#    #+#             */
-/*   Updated: 2026/04/28 22:13:43 by yosherau         ###   ########.fr       */
+/*   Created: 2026/04/29 12:51:57 by yosherau          #+#    #+#             */
+/*   Updated: 2026/04/29 13:09:32 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ScalarConverter.hpp"
-#include <iostream>
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int	main(int argc, char *argv[])
-{
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	std::string input = argv[1];
-	ScalarConverter::convert(input);
-}
+# include "./Data.hpp"
+# include <cstdint>
+
+class Serializer {
+	private:
+		Serializer();
+
+	public:
+		static uintptr_t	serialize(Data* ptr);
+		static Data			*deserialize(uintptr_t raw);
+};
+
+#endif
