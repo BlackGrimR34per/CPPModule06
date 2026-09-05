@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 17:16:11 by yosherau          #+#    #+#             */
-/*   Updated: 2026/09/05 20:02:54 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/09/05 22:48:52 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class Base {
 
 Base    *generate(void);
 void	identify(Base *p);
-
+void	identify(Base &p);
 
 #endif

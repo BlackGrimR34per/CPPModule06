@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 20:03:20 by yosherau          #+#    #+#             */
-/*   Updated: 2026/09/05 20:05:24 by yosherau         ###   ########.fr       */
+/*   Updated: 2026/09/05 23:12:39 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 int main(void)
 {
     Base    *ptr = generate();
-    identify(ptr);
+    Base    &ref = *ptr;
+    identify(ref);
 }

@@ -1,5 +1,5 @@
-#include "./Data.hpp"
-#include "./Serializer.hpp"
+#include "../include/Data.hpp"
+#include "../include/Serializer.hpp"
 
 int	main()
 {

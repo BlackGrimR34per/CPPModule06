@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Data.hpp"
+#include "../include/Data.hpp"
 
 Data::Data(void): randomNumber(10)
 {
