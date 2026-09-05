@@ -14,9 +14,16 @@
 # define SCALARCONVERTER_HPP
 
 # include <string>
+# include <iostream>
+# include <cstdlib>
+# include <limits>
+# include <cctype>
+# include <sstream>
+# include <iomanip>
+# include <cmath>
+# include <climits>
 
 class ScalarConverter {
-	// Making constructor private doesn't allow for it to be initialised
 	private:
 		ScalarConverter(void);
 		static bool	isChar(std::string &literal);
