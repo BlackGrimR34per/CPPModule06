@@ -11,11 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
-#include <iostream>
-#include <cctype>
-#include <sstream>
-#include <iomanip>
-#include <cmath>
 
 bool	shouldUseScientific(double value)
 {
@@ -111,7 +106,7 @@ void ScalarConverter::convert(std::string &literal)
 	std::string	stripped_literal;
 
 	if (isChar(literal))
-		base_val = static_cast<double>(literal[1]);
+		base_val = static_cast<double>(literal[0]);
 	else if (isInt(literal))
 	{
 		ss << literal;
@@ -189,7 +184,7 @@ void	ScalarConverter::printFloat(double base_val)
 		std::cout << "float: +inff" << std::endl;
 	else if (floating_value == -std::numeric_limits<float>::infinity())
 		std::cout << "float: -inff" << std::endl;
-	else if (base_val < std::numeric_limits<float>::lowest() || base_val > std::numeric_limits<float>::max())
+	else if (base_val < -std::numeric_limits<float>::max() || base_val > std::numeric_limits<float>::max())
 		std::cout << "float: impossible" << std::endl;
 	else
 	{
@@ -199,10 +194,11 @@ void	ScalarConverter::printFloat(double base_val)
 		else
 			std::cout << std::fixed << std::setprecision(1);
 		std::cout << floating_value << "f" << std::endl;
-		std::cout << std::defaultfloat;
+		// std::cout << std::defaultfloat;
 	}
 }
 
+// Might need to include reset of std::cout after alteration for double and float
 void	ScalarConverter::printDouble(double base_val)
 {
 	double	double_value;
@@ -214,7 +210,7 @@ void	ScalarConverter::printDouble(double base_val)
 		std::cout << "double: +inf" << std::endl;
 	else if (double_value == -std::numeric_limits<double>::infinity())
 		std::cout << "double: -inf" << std::endl;
-	else if (double_value < std::numeric_limits<double>::lowest() || double_value > std::numeric_limits<double>::max())
+	else if (double_value < -std::numeric_limits<double>::max() || double_value > std::numeric_limits<double>::max())
 		std::cout << "double: impossible" << std::endl;
 	else
 	{
@@ -224,7 +220,7 @@ void	ScalarConverter::printDouble(double base_val)
 		else
 			std::cout << std::fixed << std::setprecision(1);
 		std::cout << double_value << std::endl;
-		std::cout << std::defaultfloat;
+		// std::cout << std::defaultfloat;
 	}
 }
 
